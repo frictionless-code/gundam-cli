@@ -8,6 +8,7 @@
     "packages/*"
   ],
   "scripts": {
+    "prepare": "husky install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "commit": "git-cz"
   },
@@ -19,6 +20,10 @@
       "path": "cz-conventional-changelog"
     }
   },
+  "lint-staged": {
+    "*.js": "eslint --fix",
+    "**/*": "prettier --write --ignore-unknown"
+  },
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
@@ -29,6 +34,11 @@
     "@commitlint/config-conventional": "^13.1.0",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
-    "husky": "^7.0.2"
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.25.1",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "prettier": "2.3.2"
   }
 }
